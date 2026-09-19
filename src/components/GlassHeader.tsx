@@ -1,8 +1,18 @@
 import ThemeToggle from "./ui/theme-toggle";
 import { personalInfo } from "@/lib/data";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Award, BookOpen, BriefcaseBusiness, GraduationCap, Handshake, Menu, Presentation, Wrench, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+
+const navItems = [
+  { id: "experience", label: "Experience", icon: BriefcaseBusiness },
+  { id: "research-output", label: "Research", icon: BookOpen },
+  { id: "talks", label: "Talks", icon: Presentation },
+  { id: "academic-service", label: "Service", icon: Handshake },
+  { id: "awards", label: "Awards", icon: Award },
+  { id: "education", label: "Education", icon: GraduationCap },
+  { id: "skills", label: "Skills", icon: Wrench },
+];
 
 export default function GlassHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,33 +33,19 @@ export default function GlassHeader() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
-          {[
-            "experience",
-            "research-output",
-            "skills",
-            "projects",
-            "awards",
-            "education",
-          ].map(
-            (item, index) => (
+          {navItems.map(
+            ({ id, label, icon: Icon }, index) => (
               <motion.a
-                key={item}
-                href={`#${item}`}
-                className="transition-colors hover:text-foreground/80 text-foreground/60"
+                key={id}
+                href={`#${id}`}
+                className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground/80 text-foreground/60"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2, delay: index * 0.1 }}
                 whileHover={{ y: -2 }}
               >
-                {item === "experience" && "💼 "}
-                {item === "research-output" && "📚 "}
-                {item === "skills" && "🛠️ "}
-                {item === "projects" && "🚀 "}
-                {item === "awards" && "🏆 "}
-                {item === "education" && "🎓 "}
-                {item === "research-output"
-                  ? "Research"
-                  : item.charAt(0).toUpperCase() + item.slice(1)}
+                <Icon className="h-3.5 w-3.5" />
+                {label}
               </motion.a>
             )
           )}
@@ -81,33 +77,19 @@ export default function GlassHeader() {
             transition={{ duration: 0.3 }}
           >
             <nav className="flex flex-col space-y-4 text-sm font-medium">
-              {[
-                "experience",
-                "research-output",
-                "skills",
-                "projects",
-                "awards",
-                "education",
-              ].map(
-                (item, index) => (
+              {navItems.map(
+                ({ id, label, icon: Icon }, index) => (
                   <motion.a
-                    key={item}
-                    href={`#${item}`}
-                    className="transition-colors hover:text-foreground/80 text-foreground/60 py-2"
+                    key={id}
+                    href={`#${id}`}
+                    className="inline-flex items-center gap-2 transition-colors hover:text-foreground/80 text-foreground/60 py-2"
                     onClick={toggleMenu}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.2, delay: index * 0.1 }}
                   >
-                    {item === "experience" && "💼 "}
-                    {item === "research-output" && "📚 "}
-                    {item === "skills" && "🛠️ "}
-                    {item === "projects" && "🚀 "}
-                    {item === "awards" && "🏆 "}
-                    {item === "education" && "🎓 "}
-                    {item === "research-output"
-                      ? "Research"
-                      : item.charAt(0).toUpperCase() + item.slice(1)}
+                    <Icon className="h-4 w-4" />
+                    {label}
                   </motion.a>
                 )
               )}

@@ -26,29 +26,7 @@ export default function Footer() {
             viewport={{ once: true }}
             whileHover={{ scale: 1.01 }}
           >
-            Customized by {personalInfo.name} with{" "}
-            <motion.span
-              className="inline-block"
-              initial={{ rotate: 0 }}
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 0.5 }}
-            >
-              💻
-            </motion.span>{" "}
-            and{" "}
-            <motion.span
-              className="inline-block"
-              animate={{
-                scale: [1, 1.2, 1],
-              }}
-              transition={{
-                repeat: Infinity,
-                repeatType: "reverse",
-                duration: 1.5,
-              }}
-            >
-              ❤️
-            </motion.span>
+            Customized by {personalInfo.name}.
           </motion.p>
         </motion.div>
         <motion.p
@@ -58,7 +36,7 @@ export default function Footer() {
           transition={{ delay: 0.3, duration: 0.5 }}
           viewport={{ once: true }}
         >
-          Last updated: May 2026
+          Last updated: September 2026
         </motion.p>
       </div>
     </footer>

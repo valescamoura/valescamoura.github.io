@@ -6,6 +6,9 @@ interface TimelineItemProps {
   title: string;
   subtitle: string;
   date: string;
+  titleIcon?: React.ReactNode;
+  subtitleIcon?: React.ReactNode;
+  dateIcon?: React.ReactNode;
   isLast?: boolean;
   index?: number;
   children?: React.ReactNode;
@@ -15,6 +18,9 @@ export default function TimelineItem({
   title,
   subtitle,
   date,
+  titleIcon,
+  subtitleIcon,
+  dateIcon,
   isLast = false,
   index = 0,
   children,
@@ -50,7 +56,7 @@ export default function TimelineItem({
           />
         )}
       </div>
-      <div className={cn("pb-8", isLast ? "pb-0" : "")}>
+      <div className={cn("min-w-0 flex-1 pb-8", isLast ? "pb-0" : "")}>
         <motion.div
           className="flex flex-col gap-0.5"
           initial={{ opacity: 0, x: -20 }}
@@ -58,9 +64,18 @@ export default function TimelineItem({
           transition={{ duration: 0.5, delay: index * 0.2 + 0.1 }}
           viewport={{ once: true, margin: "-50px" }}
         >
-          <h3 className="font-medium">{title}</h3>
-          <p className="text-sm text-muted-foreground">{subtitle}</p>
-          <p className="text-xs text-muted-foreground/70 mb-2">{date}</p>
+          <h3 className="flex items-center gap-2 text-lg font-semibold leading-snug text-foreground">
+            {titleIcon}
+            {title}
+          </h3>
+          <p className="flex items-center gap-2 text-base font-medium text-foreground/80">
+            {subtitleIcon}
+            {subtitle}
+          </p>
+          <p className="mb-1.5 flex items-center gap-2 text-sm text-muted-foreground">
+            {dateIcon}
+            {date}
+          </p>
         </motion.div>
         <motion.div
           initial={{ opacity: 0 }}

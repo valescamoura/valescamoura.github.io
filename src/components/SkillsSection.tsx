@@ -3,6 +3,7 @@ import { skills } from "@/lib/data";
 import { motion } from "framer-motion";
 import MotionWrapper from "./MotionWrapper";
 import { GlassCard } from "./ui/glass-card";
+import { Bot, Cloud, Code2, Cpu, Languages, Palette, Wrench } from "lucide-react";
 
 function SkillTag({ skill, index }: { skill: string; index: number }) {
   return (
@@ -53,7 +54,10 @@ export default function SkillsSection() {
       <div className="container max-w-4xl mx-auto px-6 md:px-4">
         <MotionWrapper>
           <h2 className="text-2xl font-bold mb-8 text-center md:text-left">
-            🛠️ Skills
+            <span className="inline-flex items-center gap-2">
+              <Wrench className="h-6 w-6 text-purple-500" />
+              Skills
+            </span>
           </h2>
         </MotionWrapper>
 
@@ -67,7 +71,7 @@ export default function SkillsSection() {
           <motion.div variants={skillCategoryVariants}>
             <GlassCard className="p-4">
               <h3 className="text-lg font-medium mb-3 text-center md:text-left flex items-center">
-                <span className="mr-2 text-xl">💻</span> Programming Languages
+                <Code2 className="mr-2 h-5 w-5 text-purple-500" /> Programming Languages
               </h3>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                 {skills.programmingLanguages.map((skill, index) => (
@@ -80,7 +84,7 @@ export default function SkillsSection() {
           <motion.div variants={skillCategoryVariants}>
             <GlassCard className="p-4">
               <h3 className="text-lg font-medium mb-3 text-center md:text-left flex items-center">
-                <span className="mr-2 text-xl">🤖</span> Agent & AI Stack
+                <Bot className="mr-2 h-5 w-5 text-purple-500" /> Agent & AI Stack
               </h3>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                 {skills.agentAndAIStack.map((skill, index) => (
@@ -93,7 +97,7 @@ export default function SkillsSection() {
           <motion.div variants={skillCategoryVariants}>
             <GlassCard className="p-4">
               <h3 className="text-lg font-medium mb-3 text-center md:text-left flex items-center">
-                <span className="mr-2 text-xl">☁️</span> Cloud & DevOps
+                <Cloud className="mr-2 h-5 w-5 text-purple-500" /> Cloud & DevOps
               </h3>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                 {skills.cloudAndDevOps.map((skill, index) => (
@@ -106,7 +110,7 @@ export default function SkillsSection() {
           <motion.div variants={skillCategoryVariants}>
             <GlassCard className="p-4">
               <h3 className="text-lg font-medium mb-3 text-center md:text-left flex items-center">
-                <span className="mr-2 text-xl">⚙️</span> Parallel and Distributed Computing
+                <Cpu className="mr-2 h-5 w-5 text-purple-500" /> Parallel and Distributed Computing
               </h3>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                 {skills.parallelAndDistributedComputing.map((skill, index) => (
@@ -119,7 +123,7 @@ export default function SkillsSection() {
         <motion.div variants={skillCategoryVariants}>
             <GlassCard className="p-4">
               <h3 className="text-lg font-medium mb-3 text-center md:text-left flex items-center">
-                <span className="mr-2 text-xl">🎨</span> Soft skills
+                <Palette className="mr-2 h-5 w-5 text-purple-500" /> Soft skills
               </h3>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                 {skills.softSkills.map((skill, index) => (
@@ -132,7 +136,7 @@ export default function SkillsSection() {
           <motion.div variants={skillCategoryVariants}>
             <GlassCard className="p-4">
               <h3 className="text-lg font-medium mb-3 text-center md:text-left flex items-center">
-                <span className="mr-2 text-xl">🌐</span> Languages
+                <Languages className="mr-2 h-5 w-5 text-purple-500" /> Languages
               </h3>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                 {skills.languages.map((skill, index) => (

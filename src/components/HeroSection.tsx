@@ -1,5 +1,5 @@
 import { personalInfo, researchInterests } from "@/lib/data";
-import { Mail, Github, MapPin, Linkedin } from "lucide-react";
+import { Mail, Github, MapPin, Linkedin, BadgeCheck, GraduationCap } from "lucide-react";
 import { motion } from "framer-motion";
 import MotionWrapper from "./MotionWrapper";
 
@@ -40,8 +40,7 @@ export default function HeroSection() {
               className="text-4xl font-bold mb-2"
               variants={childVariants}
             >
-              {personalInfo.name}{" "}
-              <span className="inline-block animate-pulse">✨</span>
+              {personalInfo.name}
             </motion.h1>
 
             <motion.p
@@ -96,6 +95,30 @@ export default function HeroSection() {
               >
                 <Linkedin className="h-4 w-4 mr-2" />
                 LinkedIn
+              </motion.a>
+
+              <motion.a
+                href={personalInfo.orcid}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
+                variants={childVariants}
+                whileHover={{ scale: 1.05, color: "#4b5563" }}
+              >
+                <BadgeCheck className="h-4 w-4 mr-2" />
+                ORCID
+              </motion.a>
+
+              <motion.a
+                href={personalInfo.googleScholar}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
+                variants={childVariants}
+                whileHover={{ scale: 1.05, color: "#4b5563" }}
+              >
+                <GraduationCap className="h-4 w-4 mr-2" />
+                Google Scholar
               </motion.a>
             </motion.div>
           </div>

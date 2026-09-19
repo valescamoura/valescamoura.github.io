@@ -4,12 +4,16 @@ export const personalInfo = {
   email: "valescamoura@id.uff.br",
   github: "https://github.com/valescamoura",
   linkedin: "https://linkedin.com/in/valesca-moura",
+  orcid: "https://orcid.org/0000-0002-9089-8680",
+  googleScholar:
+    "https://scholar.google.com/citations?user=mlhkgKMAAAAJ&hl=pt-BR&oi=ao",
   profilePicture: "/profile.jpeg",
   heroDescription: "Computer Scientist with solid experience in software engineering applied to R&D initiatives. I have worked on academic and corporate projects (UFF/Petrobras, IBM Research Brazil, Tecgraf PUC-Rio), with a focus on automation, accelerated and cloud computing, accelerated discovery, and technological innovation. I am a self-driven, results-oriented, analytical, and communicative professional, with strong experience in collaborative work within multidisciplinary teams."
     // "M.Sc. student in Computer Science at Fluminense Federal University (UFF) and member of the eScience Research Lab, focusing on provenance in agent-based workflows. Currently working at Tecgraf/PUC-Rio, where I develop AI agents for scientific workflows in the oil and gas domain. \n\nPreviously, I spent four years at IBM Research, first as a Research and Software Engineering Intern and later as a Research Scientist, working on R&D in materials chemistry. \n\nDuring my undergraduate studies at UFF, I was part of the SGCLab and MídiaCom research groups, conducting research in parallel and distributed programming, and contributed to a project in partnership with Petrobras involving distributed computing and computational fluid dynamics. \n\nMy research interests include agent-based workflows, workflow provenance, Distributed Systems, Cloud Computing, Software Engineering, and High-Performance Computing (HPC)",
 };
 
 export const researchInterests = [
+  "Agentic Provenance",
   "Workflows Provenance",
   "Agentic Systems",
   "High-Performance Computing",
@@ -29,7 +33,20 @@ export const workExperience = [
     ],
   },
   {
-    company: "UFFScience Research Group",
+    company: "Oak Ridge National Laboratory (ORNL)",
+    location: "Oak Ridge, United States",
+    position: "Graduate Research Intern",
+    period: "Summer 2026",
+    achievements: [
+      "Researched provenance-driven traceability for agentic workflows and AI assistants.",
+      "Analyzed integration strategies between agentic systems and provenance systems, including Flowcept and Academy.",
+      "Developed a provenance model for loop engineering.",
+      "Worked with Frontier, ORNL's exascale supercomputer.",
+      "Worked under the mentorship of Renan Souza (renansouza.org).",
+    ],
+  },
+  {
+    company: "UFFeScience Research Group",
     location: "Rio de Janeiro, Brazil",
     position: "Master’s Student Researcher",
     period: "2025 - Present",
@@ -127,7 +144,7 @@ export const education = [
     degree: "Bachelor’s Degree in Computer Science",
     period: "2019 - 2023",
     achievements: [
-      "Final project: Running Parallel MPI Applications in the Cloud Using the EasyGrid AMS Framework.",
+      "Final project on running parallel MPI applications in the cloud using the EasyGrid AMS framework.",
       "Advised by Eugene Francis Vinod Rebello (UFF) and Fernanda G. de Oliveira Passos (ISEL Portugal).",
       "GPA: 8.5/10.0",
     ],
@@ -138,7 +155,7 @@ export const education = [
     degree: "High School Diploma",
     period: "2016 - 2018",
     achievements: [
-      "Received an Honorable Mention in the Brazilian Public School Mathematics Olympiad (OBMEP).",
+      "Received two Honorable Mentions in the Brazilian Public School Mathematics Olympiad (OBMEP).",
     ],
   },
 ];
@@ -234,10 +251,20 @@ export const projects = []
 
 export const awards = [
   {
+    name: "Honorable Mention – Full Paper SBBD",
+    issuer: "Simpósio Brasileiro de Bancos de Dados (SBBD)",
+    date: "2026",
+    type: "National",
+    description:
+      "Honorable mention awarded to a full paper selected as a finalist for Best Full Paper at SBBD, Brazil's main conference on databases.",
+  },
+  {
     name: "IBM Research Accomplishments A-level",
     issuer: "IBM Research",
     date: "2025",
     type: "International",
+    description:
+      "Prestigious internal IBM Research award recognizing exceptional scientific and technical achievements with significant commercial impact or major technological advances.",
     // position: "Award Recipient",
   },
   {
@@ -245,6 +272,8 @@ export const awards = [
     issuer: "IBM Research",
     date: "2025",
     type: "International",
+    description:
+      "Global internal IBM award recognizing technology solutions for real environmental challenges. Awarded to IBM Research Safer Materials Advisor, an AI assistant for identifying, tracking, and replacing hazardous chemicals such as PFAS in supply chains.",
     // position: "Award Recipient",
   },
   {
@@ -252,13 +281,17 @@ export const awards = [
     issuer: "PROPPI-UFF",
     date: "2021",
     type: "National",
+    description:
+      "Awarded for research work presented at UFF's annual undergraduate research seminar, which highlights outstanding student research across the university.",
     position: "Honorable Mention",
   },
   {
-    name: "Brazilian Public School Mathematics Olympiad (OBMEP)",
+    name: "Honorable Mention – Brazilian Public School Mathematics Olympiad (OBMEP)",
     issuer: "IMPA – Institute for Pure and Applied Mathematics",
     date: "2015, 2017",
     type: "National",
+    description:
+      "National distinction awarded to high-performing students in Brazil's public school mathematics olympiad.",
     position: "Honorable Mention",
   },
 ];
@@ -268,29 +301,114 @@ export const researchTypes = [
   "Conference Paper",
   "Journal Paper",
   "Software",
+  "Thesis / Dissertation",
 ];
 
 // TODO: add filter by year, field and type. add some resource to show more info about the output. 
 export const researchOutput = [
   {
-    title: "Uma Abordagem Orientada a Dados de Proveniência para Rastreabilidade de Workflows Agênticos",
+    title:
+      "Executando Aplicações Paralelas MPI na Nuvem com o Uso do Framework EasyGrid AMS (Running Parallel MPI Applications in the Cloud Using the EasyGrid AMS Framework)",
+    year: "2023",
+    type: "Thesis / Dissertation",
+    status: "Published",
+    authors: ["Valesca Moura de Sousa"],
+    venue: "Fluminense Federal University (UFF)",
+    location: "Niterói, Brazil",
+    language: "Portuguese",
+    description: "Bachelor's final project in Computer Science.",
+    tags: ["HPC", "Parallel Computing", "Cloud Computing", "MPI"],
+    featured: true,
+    links: {
+      paper: "https://app.uff.br/riuff/handle/1/32469",
+      pdf: "",
+      arxiv: "",
+      doi: "",
+      github: "",
+      bibtex: "",
+    },
+  },
+  {
+    title:
+      "PROV-AGENT-LOOP: Provenance Data Management for Agentic Loop Engineering",
     year: "2026",
-    type: "Preprint",
-    status: "Preprint",
+    type: "Conference Paper",
+    status: "Accepted",
+    authors: [
+      "Valesca Moura",
+      "Gabriele Padovani",
+      "Daniel de Oliveira",
+      "Rafael Ferreira da Silva",
+      "Renan Souza",
+    ],
+    venue:
+      "1st International Workshop on Agentic AI for HPC (AgenticAI4HPC 2026), Supercomputing 2026",
+    location: "Chicago, USA",
+    description: "",
+    tags: ["Agentic Provenance", "Agentic Workflows", "HPC"],
+    featured: true,
+    links: {
+      paper: "https://ornl.github.io/events/agenticai4hpc2026/",
+      pdf: "",
+      arxiv: "",
+      doi: "",
+      github: "",
+      bibtex: "",
+    },
+  },
+  {
+    title:
+      "Instrumentation vs. Observability: Provenance Capture Trade-offs in Agentic Workflows",
+    year: "2026",
+    type: "Conference Paper",
+    status: "Accepted",
+    authors: [
+      "Valesca Moura",
+      "Amal Gueroudji",
+      "Daniel Rosendo",
+      "Ben Clifford",
+      "Kyle Chard",
+      "Rafael Ferreira da Silva",
+      "Daniel de Oliveira",
+      "Renan Souza",
+    ],
+    venue:
+      "WISDOM Workshop at the IEEE International Conference on e-Science",
+    location: "Naples, Italy",
+    description: "",
+    tags: ["Agentic Provenance", "Agentic Workflows"],
+    featured: true,
+    links: {
+      paper: "https://workflows.community/workshops/wisdom-2026/",
+      pdf: "",
+      arxiv: "",
+      doi: "",
+      github: "",
+      bibtex: "",
+    },
+  },
+  {
+    title: "Uma Abordagem Orientada a Dados de Proveniência para Rastreabilidade de Workflows Agênticos (A Provenance Data-Driven Approach for Traceability of Agentic Workflows)",
+    year: "2026",
+    type: "Conference Paper",
+    status: "Published",
     authors: [
       "Valesca Moura de Sousa",
       "Sandro Rama Fiorini",
       "Daniel de Oliveira",
     ],
-    venue: "SBBD",
+    venue: "Brazilian Symposium on Databases (SBBD)",
+    location: "São Carlos, Brazil",
+    language: "Portuguese, with abstract in English",
     description:
-      "Accepted full paper for SBBD main track. Available soon.",
-    tags: ["AI Agents", "Provenance", "Agentic Workflows"],
+      "Best Full Paper candidate and Honorable Mention at SBBD.",
+    tags: ["AI Agents", "Agentic Provenance", "Agentic Workflows"],
     featured: true,
     links: {
-      paper: "",
+      paper: "https://sol.sbc.org.br/index.php/sbbd/article/view/43963",
+      pdf: "https://sol.sbc.org.br/index.php/sbbd/article/view/43963/43726",
       arxiv: "",
-      doi: "",
+      doi: "https://doi.org/10.5753/sbbd.2026.249150",
       github: "",
       bibtex: "",
     },
@@ -309,12 +427,13 @@ export const researchOutput = [
       "Viviane Torres da Silva",
     ],
     venue: "arXiv",
-    description:
-      "Preprint on strategies for handling context window overflow in AI agents.",
-    tags: ["AI Agents", "LLMs", "Context Window", "Agentic Workflows"],
+    location: "Online",
+    description: "",
+    tags: ["AI Agents", "Context Window", "Agentic Workflows"],
     featured: true,
     links: {
       paper: "https://arxiv.org/abs/2511.22729",
+      pdf: "",
       arxiv: "https://arxiv.org/abs/2511.22729",
       doi: "https://doi.org/10.48550/arXiv.2511.22729",
       github: "",
@@ -335,12 +454,13 @@ export const researchOutput = [
       "Viviane Torres da Silva",
     ],
     venue: "arXiv",
-    description:
-      "Preprint on episodic memory mechanisms for suggesting next tasks in agentic frameworks.",
+    location: "Online",
+    description: "",
     tags: ["AI Agents", "Episodic Memory", "Agentic Workflows"],
     featured: true,
     links: {
       paper: "https://arxiv.org/abs/2511.17775",
+      pdf: "",
       arxiv: "https://arxiv.org/abs/2511.17775",
       doi: "https://doi.org/10.48550/arXiv.2511.17775",
       github: "",
@@ -361,13 +481,14 @@ export const researchOutput = [
       "Fernanda G. O. Passos",
     ],
     venue: "Applied Computing Conference, Lisbon",
-    description:
-      "Open-source software for predicting density of complex mixtures using the Peng-Robinson Equation of State.",
-    tags: ["Scientific Software", "Chemistry", "PREOS", "Open Source"],
+    location: "Lisbon, Portugal",
+    description: "",
+    tags: ["Scientific Software", "PREOS"],
     featured: true,
     links: {
       paper:
         "https://www.iadisportal.org/digital-library/hidrouff-density-calculator-an-open-source-software-for-predicting-density-of-complex-mixtures-using-peng-robinson-equation-of-state-preos",
+      pdf: "",
       arxiv: "",
       doi: "",
       github: "",
@@ -380,17 +501,18 @@ export const researchOutput = [
     year: "2021",
     type: "Journal Paper",
     status: "Published",
-    authors: ["Valesca Moura de Sousa"],
+    authors: ["Valesca Moura de Sousa", "Fernanda G. O. Passos",],
     venue: "PIBIC Engineering Journal, Fluminense Federal University",
+    location: "Niterói, Brazil",
     pages: "330–332",
     language: "Portuguese",
-    description:
-      "Article on parallel processing techniques applied to computational fluid dynamics simulations.",
-    tags: ["Parallel Computing", "CFD", "Scientific Computing", "HPC"],
+    description: "",
+    tags: ["Parallel Computing", "CFD", "HPC"],
     featured: false,
     links: {
       paper:
         "https://revistapibic.uff.br/wp-content/uploads/sites/343/2022/12/RevistaPIBIC2021_compressed_ok.pdf",
+      pdf: "",
       arxiv: "",
       doi: "",
       github: "",
@@ -402,14 +524,23 @@ export const researchOutput = [
     year: "2021",
     type: "Software",
     status: "Published",
-    authors: ["Valesca Moura de Sousa"],
+    authors: [
+      "Valesca Moura de Sousa",
+      "Felipe Pereira de Moura",
+      "Mateus Pereira de Sousa",
+      "Rogério Fernandes Lacerda",
+      "Fernanda G. O. Passos",
+      "Elson Antonio do Nascimento"
+    ],
     venue: "GitHub / Zenodo",
+    location: "Online",
     description:
       "Open-source Python software available on GitHub and published on Zenodo.",
-    tags: ["Python", "Scientific Software", "Open Source", "Zenodo"],
+    tags: ["Scientific Software"],
     featured: true,
     links: {
       paper: "",
+      pdf: "",
       arxiv: "",
       doi: "https://doi.org/10.5281/zenodo.4646222",
       github: "",
@@ -425,13 +556,14 @@ export const researchOutput = [
     authors: ["Valesca Moura de Sousa"],
     venue:
       "Regional School of High Performance Computing of Rio de Janeiro (ERAD-RJ)",
+    location: "Rio de Janeiro, Brazil",
     language: "Portuguese",
-    description:
-      "Article on parallel processing in computational fluid dynamics simulations using OpenFOAM.",
+    description: "",
     tags: ["OpenFOAM", "CFD", "Parallel Computing", "HPC"],
     featured: false,
     links: {
       paper: "",
+      pdf: "",
       arxiv: "",
       doi: "https://doi.org/10.5753/eradrj.2020.14517",
       github: "",
@@ -440,13 +572,129 @@ export const researchOutput = [
   },
 ];
 
-export const volunteerExperience = [
+export const talksAndPresentations = [
+  {
+    title:
+      "Uma Abordagem Orientada a Dados de Proveniência para Rastreabilidade de Workflows Agênticos (A Provenance Data-Driven Approach for Traceability of Agentic Workflows)",
+    type: "Conference Presentation",
+    event: "Brazilian Symposium on Databases (SBBD)",
+    year: "2026",
+    date: "September 10, 2026",
+    location: "São Carlos, Brazil",
+    description:
+      "Presentation of the full paper selected as a Best Full Paper finalist and awarded an Honorable Mention at SBBD.",
+    links: {
+      event: "https://sbbd.org.br/2026/trilha-principal-aceitos/",
+      slides: "",
+      video: "",
+    },
+  },
+  {
+    title:
+      "Agentes de IA: do conceito à prática (AI Agents: From Concept to Practice)",
+    type: "Invited Talk",
+    event: "SOMA Management Technical Meeting, Tecgraf",
+    year: "2026",
+    date: "April 2026",
+    location: "Rio de Janeiro, Brazil",
+    description:
+      "Technical talk introducing AI agents from conceptual foundations to practical applications.",
+    links: {
+      event: "",
+      slides: "",
+      video: "",
+    },
+  },
+  {
+    title:
+      "Workflows com vida própria (mas sob controle!): Uma breve introdução aos agentic workflows (Workflows with a Life of Their Own, but Under Control: A Brief Introduction to Agentic Workflows)",
+    type: "Invited Talk",
+    event: "Agenda Acadêmica 2025, Fluminense Federal University (UFF)",
+    year: "2025",
+    date: "October 22, 2025",
+    location: "IC/UFF Auditorium, Niterói, Brazil",
+    description:
+      "In-person talk introducing agentic workflows at UFF's academic week.",
+    links: {
+      event: "",
+      slides: "",
+      video: "",
+    },
+  },
+  {
+    title:
+      "Exploring Different Ways to Capture Provenance and Telemetry in Agentic Systems",
+    type: "Invited Talk",
+    event: "Academy Community Meeting",
+    year: "2026",
+    date: "July 1, 2026",
+    location: "Online",
+    description:
+      "Community talk on provenance and telemetry capture strategies for agentic systems.",
+    links: {
+      event: "",
+      slides: "",
+      video: "",
+    },
+  },
+  {
+    title:
+      "Instrumentation vs. Observability: Provenance Capture Trade-offs in Agentic Workflows",
+    type: "Invited Talk",
+    event: "APEX 2026 / ParslFest",
+    year: "2026",
+    date: "September 15, 2026",
+    location: "Online",
+    description:
+      "Invited presentation on provenance capture trade-offs in agentic workflows.",
+    links: {
+      event: "https://parsl-project.org/parslfest/apex2026.html",
+      slides: "https://parsl-project.org/parslfest/2026/moura-provenance.pdf",
+      video: "",
+    },
+  },
+  {
+    title:
+      "Study and Analysis of Parallel Processing in Computational Fluid Dynamics Simulations",
+    type: "Research Presentation",
+    event: "31st Vasconcelos Torres Seminar, Fluminense Federal University (UFF)",
+    year: "2021",
+    date: "2021",
+    location: "Niterói, Brazil",
+    description:
+      "Undergraduate research presentation awarded an Honorable Mention at UFF's annual research seminar.",
+    links: {
+      event: "",
+      slides: "",
+      video: "",
+    },
+  },
+  {
+    title:
+      "Study and Analysis of Parallel Processing in Computational Fluid Dynamics Simulations with OpenFOAM",
+    type: "Conference Presentation",
+    event:
+      "Regional School of High Performance Computing of Rio de Janeiro (ERAD-RJ)",
+    year: "2020",
+    date: "2020",
+    location: "Rio de Janeiro, Brazil",
+    description:
+      "Conference presentation on parallel processing in computational fluid dynamics simulations using OpenFOAM.",
+    links: {
+      event: "",
+      slides: "",
+      video: "",
+    },
+  },
+];
+
+export const academicService = [
   {
     role: "Student Volunteer",
     organization:
       "Supercomputing Conference (SC) – The International Conference for High Performance Computing, Networking, Storage, and Analysis",
-    location: "Atlanta and St. Louis, USA",
-    period: "2024 - 2025",
+    location: "Atlanta, GA; St. Louis, MO; Chicago, IL",
+    period: "2024, 2025, 2026",
     description:
       "Volunteer activities supporting one of the leading international conferences in high-performance computing.",
     tags: ["HPC", "Supercomputing", "Conference", "Volunteer"],
@@ -459,6 +707,26 @@ export const volunteerExperience = [
     description:
       "Volunteer participation in the Brazilian Computer Society Conference.",
     tags: ["Computer Science", "Conference", "Volunteer"],
+  },
+  {
+    role: "Program Committee",
+    organization: "Agent4Science Workshop (eScience Conference)",
+    location: "Online",
+    period: "2026",
+    description:
+      "Reviewed submissions for the Agent4Science eScience Workshop.",
+    tags: ["Program Committee", "AI Agents", "Scientific Workflows"],
+    link: "https://agent4sc.github.io/",
+  },
+  {
+    role: "Program Committee",
+    organization: "WORKS Workshop (SC Conference)",
+    location: "Online",
+    period: "2026",
+    description:
+      "Reviewed submissions for the Workshop on Workflows in Support of Large-Scale Science.",
+    tags: ["Program Committee", "Scientific Workflows", "HPC"],
+    link: "https://works-workshop.org/",
   },
 ];
 

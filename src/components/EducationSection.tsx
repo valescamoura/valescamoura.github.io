@@ -1,21 +1,9 @@
 import { education } from "@/lib/data";
 import TimelineItem from "./TimelineItem";
-import { Award, ChevronDown } from "lucide-react";
+import { Building2, Calendar, ExternalLink, GraduationCap, MapPin } from "lucide-react";
 import MotionWrapper from "./MotionWrapper";
-import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
 
 export default function EducationSection() {
-  const [openItems, setOpenItems] = useState<string[]>([]);
-
-  const toggleAchievements = (itemKey: string) => {
-    setOpenItems((items) =>
-      items.includes(itemKey)
-        ? items.filter((item) => item !== itemKey)
-        : [...items, itemKey]
-    );
-  };
-
   return (
     <section
       id="education"
@@ -24,83 +12,68 @@ export default function EducationSection() {
       <div className="container max-w-4xl mx-auto px-6 md:px-4">
         <MotionWrapper>
           <h2 className="text-2xl font-bold mb-8 text-center md:text-left">
-            🎓 Education
+            <span className="inline-flex items-center gap-2">
+              <GraduationCap className="h-6 w-6 text-purple-500" />
+              Education
+            </span>
           </h2>
         </MotionWrapper>
 
         <div className="mb-8">
           {education.map((edu, index) => {
             const itemKey = `${edu.institution}-${edu.degree}-${edu.period}`;
-            const isOpen = openItems.includes(itemKey);
 
             return (
               <TimelineItem
                 key={itemKey}
-                title={`🎓 ${edu.degree}`}
-                subtitle={`🏛️ ${edu.institution}`}
-                date={`📅 ${edu.period}`}
+                title={edu.degree}
+                subtitle={edu.institution}
+                date={edu.period}
+                titleIcon={<GraduationCap className="h-5 w-5 text-purple-500" />}
+                subtitleIcon={<Building2 className="h-4 w-4 text-muted-foreground" />}
+                dateIcon={<Calendar className="h-4 w-4 text-muted-foreground" />}
                 isLast={index === education.length - 1}
                 index={index}
               >
-                <p className="text-sm text-muted-foreground mb-3">
-                  📍 {edu.location}
+                <p className="mb-3 flex items-center gap-2 text-sm text-muted-foreground">
+                  <MapPin className="h-4 w-4" />
+                  {edu.location}
                 </p>
 
                 {edu.achievements && edu.achievements.length > 0 && (
-                  <motion.div
-                    className="mt-3 overflow-hidden rounded-lg border border-purple-500/20 bg-background/80 shadow-sm backdrop-blur-sm backdrop-filter dark:border-purple-500/10 dark:bg-card/10"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    viewport={{ once: true }}
-                  >
-                    <button
-                      type="button"
-                      className="flex w-full items-center justify-between gap-4 p-4 text-left transition-colors hover:bg-purple-500/5"
-                      onClick={() => toggleAchievements(itemKey)}
-                      aria-expanded={isOpen}
-                    >
-                      <span className="flex items-center">
-                        <span className="h-6 w-6 flex items-center justify-center rounded-full bg-purple-500/10 mr-2">
-                          <Award className="h-4 w-4 text-purple-500" />
-                        </span>
-                        <span className="text-sm font-medium">
-                          Achievements & Activities
-                        </span>
-                      </span>
-                      <motion.span
-                        animate={{ rotate: isOpen ? 180 : 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-background/70"
-                      >
-                        <ChevronDown className="h-4 w-4 text-muted-foreground" />
-                      </motion.span>
-                    </button>
+                  <ul className="mt-2 max-w-2xl space-y-1 text-xs leading-relaxed text-muted-foreground/85 md:text-sm">
+                    {edu.achievements.map((achievement, i) => {
+                      const text =
+                        typeof achievement === "string"
+                          ? achievement
+                          : achievement.text;
+                      const href =
+                        typeof achievement === "string"
+                          ? ""
+                          : achievement.href;
 
-                    <AnimatePresence initial={false}>
-                      {isOpen && (
-                        <motion.ul
-                          className="list-none space-y-2 border-t border-border/30 px-4 pb-4 pt-3 text-sm"
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.25, ease: "easeInOut" }}
-                        >
-                          {edu.achievements.map((achievement, i) => (
-                            <motion.li
-                              key={i}
-                              className="text-muted-foreground relative pl-6"
-                              initial={{ opacity: 0, x: -10 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ duration: 0.2, delay: 0.04 * i }}
-                            >
-                              {achievement}
-                            </motion.li>
-                          ))}
-                        </motion.ul>
-                      )}
-                    </AnimatePresence>
-                  </motion.div>
+                      return (
+                      <li
+                        key={i}
+                        className="relative pl-4 before:absolute before:left-0 before:top-[0.65em] before:h-1 before:w-1 before:rounded-full before:bg-purple-500/45"
+                      >
+                        {href ? (
+                          <a
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center transition-colors hover:text-purple-500"
+                          >
+                            {text}
+                            <ExternalLink className="ml-1.5 h-3.5 w-3.5" />
+                          </a>
+                        ) : (
+                          text
+                        )}
+                      </li>
+                    );
+                    })}
+                  </ul>
                 )}
               </TimelineItem>
             );

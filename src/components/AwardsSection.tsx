@@ -1,6 +1,6 @@
 import React from "react";
 import { awards } from "@/lib/data";
-import { Trophy } from "lucide-react";
+import { Building2, Calendar, Globe2, Map, Trophy } from "lucide-react";
 import MotionWrapper from "./MotionWrapper";
 import { GlassCard } from "./ui/glass-card";
 import { motion } from "framer-motion";
@@ -14,7 +14,10 @@ export default function AwardsSection() {
       <div className="container max-w-4xl mx-auto px-6 md:px-4">
         <MotionWrapper>
           <h2 className="text-2xl font-bold mb-8 text-center md:text-left">
-            🏆 Awards
+            <span className="inline-flex items-center gap-2">
+              <Trophy className="h-6 w-6 text-purple-500" />
+              Awards
+            </span>
           </h2>
         </MotionWrapper>
 
@@ -32,26 +35,31 @@ export default function AwardsSection() {
                   </motion.div>
                   <h3 className="font-medium">{award.name}</h3>
                 </div>
-                <p className="text-xs text-muted-foreground mb-1 pl-8">
-                  🏢 {award.issuer}
+                <p className="mb-1 flex items-center gap-2 pl-8 text-xs text-muted-foreground">
+                  <Building2 className="h-3.5 w-3.5" />
+                  {award.issuer}
                 </p>
+                {award.description && (
+                  <p className="mb-3 pl-8 text-xs leading-relaxed text-muted-foreground">
+                    {award.description}
+                  </p>
+                )}
                 <div className="flex flex-col space-y-2 mt-auto">
-                  <div className="flex justify-between items-center">
-                    <span className="text-xs text-muted-foreground bg-background/50 px-2 py-1 rounded-md">
-                      📅 {award.date}
+                  <div className="flex items-center">
+                    <span className="inline-flex items-center gap-1.5 rounded-md bg-background/50 px-2 py-1 text-xs text-muted-foreground">
+                      <Calendar className="h-3.5 w-3.5" />
+                      {award.date}
                     </span>
-                    <motion.span
-                      className="text-xs px-2 py-1 bg-purple-500/10 rounded-full"
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      {award.position}
-                    </motion.span>
                   </div>
                   <motion.span
                     className="text-xs text-muted-foreground/80 bg-background/50 px-2 py-1 rounded-md w-fit"
                     whileHover={{ scale: 1.05 }}
                   >
-                    {award.type === "International" ? "🌎 " : "🇧🇷"}
+                    {award.type === "International" ? (
+                      <Globe2 className="mr-1 inline h-3.5 w-3.5" />
+                    ) : (
+                      <Map className="mr-1 inline h-3.5 w-3.5" />
+                    )}
                     {award.type}
                   </motion.span>
                 </div>

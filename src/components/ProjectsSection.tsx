@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
-import { Github } from "lucide-react";
+import { ExternalLink, FolderKanban, Github } from "lucide-react";
 import { GlassCard } from "./ui/glass-card";
 import MotionWrapper from "./MotionWrapper";
 import { motion } from "framer-motion";
@@ -18,7 +18,10 @@ export default function ProjectsSection() {
       <div className="container max-w-4xl mx-auto px-6 md:px-4">
         <MotionWrapper>
           <h2 className="text-2xl font-bold mb-8 text-center md:text-left">
-            🚀 Projects
+            <span className="inline-flex items-center gap-2">
+              <FolderKanban className="h-6 w-6 text-purple-500" />
+              Projects
+            </span>
           </h2>
         </MotionWrapper>
 
@@ -57,7 +60,8 @@ export default function ProjectsSection() {
                     whileTap={{ scale: 0.95 }}
                   >
                     <Github className="h-4 w-4 mr-2 group-hover/link:rotate-12 transition-transform duration-300" />
-                    View on GitHub 🔗
+                    View on GitHub
+                    <ExternalLink className="ml-1.5 h-3.5 w-3.5" />
                   </motion.a>
                 </CardFooter>
               </GlassCard>
