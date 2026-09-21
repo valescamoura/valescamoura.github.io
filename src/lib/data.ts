@@ -650,7 +650,7 @@ export const talksAndPresentations = [
     links: {
       event: "https://parsl-project.org/parslfest/apex2026.html",
       slides: "https://parsl-project.org/parslfest/2026/moura-provenance.pdf",
-      video: "",
+      video: "https://youtu.be/ixRAI6xd2y4",
     },
   },
   {
